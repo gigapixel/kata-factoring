@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	primeFactor(20)
+	primeFactor(1000)
 }
 
 func primeFactor(num int) {
