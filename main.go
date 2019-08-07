@@ -19,7 +19,7 @@ var rslist = []int{}
 
 func main() {
 	fmt.Println("Hello")
-	primefactor(108)
+	primefactor(4)
 }
 
 func primefactor(num int) {
@@ -39,5 +39,28 @@ func primefactor(num int) {
 		// remain = 1
 	}
 	sort.Ints(rslist)
+	fmt.Println(rslist)
+}
+
+func primefactor2(num int) {
+	// fmt.Println(num)
+	remain := num
+	prime := 2
+	for remain > 1 {
+		if remain >= prime*prime {
+			rs := remain % prime
+			if rs == 0 {
+				rslist = append(rslist, prime)
+				remain = remain / prime
+			} else {
+				prime = prime + 1
+			}
+		} else {
+			rslist = append(rslist, remain)
+			remain = 1
+		}
+
+	}
+	// sort.Ints(rslist)
 	fmt.Println(rslist)
 }
